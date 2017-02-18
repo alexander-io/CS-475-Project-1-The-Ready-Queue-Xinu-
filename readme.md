@@ -1,2 +1,2 @@
-testing git contributor log
+testing git contributor log -david
 ~
