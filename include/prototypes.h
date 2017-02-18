@@ -58,7 +58,7 @@ extern  void exception(int32, int32*);
 extern	syscall	freebuf(char *);
 
 /* in file freemem.c */
-extern	syscall	free(void *, uint32);
+extern	syscall	free2(void *, uint32);
 extern	syscall	freemem(char *, uint32);
 
 /* in file getbuf.c */
@@ -187,7 +187,7 @@ extern	syscall	ptreset(int32, int32);
 extern	syscall	ptsend(int32, umsg32);
 
 /* in file putc.c */
-extern	syscall	putc(did32, char);
+extern	syscall	putc2(did32, char);
 
 /* in file read.c */
 extern	syscall	read(did32, char *, uint32);

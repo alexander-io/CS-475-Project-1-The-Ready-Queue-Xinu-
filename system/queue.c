@@ -3,7 +3,7 @@
 // #include <xinu.h>
 #include "../include/xinu.h"
 //#include "../include/stdio.h"
-//#include <stdlib.h>
+#include <stdlib.h>
 
 /**
  * Prints out contents of a queue
@@ -13,7 +13,7 @@ void	printqueue(struct queue *q)
 {
 	//TODO - print all contents from head to tail
 	//q.size;
-	//printf("%d", q->size);
+	printf("%d\n", q->size);
 	//TODO - format should be [(pid=p1), (pid=p2), ...]
 }
 
