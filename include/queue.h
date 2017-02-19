@@ -5,6 +5,8 @@
 /* Default # of queue entries: 1 per process plus 2 for ready list plus	*/
 /*			2 for sleep list plus 2 per semaphore		*/
 
+
+
 #ifndef NQENT
 #define NQENT	(NPROC + 4 + NSEM + NSEM)
 #endif
@@ -16,8 +18,11 @@
 struct queue
 {
 	// TODO - pointer to head qentry
+	struct qentry *head;
 	// TODO - pointer to tail qentry
+	struct qentry *tail;
 	// TODO - size of queue
+	int size;
 };
 
 
@@ -25,7 +30,9 @@ struct queue
 struct qentry
 {
 	// TODO - process ID
+	pid32 process_id;
 	// TODO - other members
+	
 };
 
 

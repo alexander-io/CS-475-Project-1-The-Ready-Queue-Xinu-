@@ -1,7 +1,8 @@
 /* queue.c - enqueue, dequeue, isempty, nonempty, et al. */
 
-#include <xinu.h>
-#include <stdlib.h>
+// #include <xinu.h>
+#include "../include/xinu.h"
+//#include <stdlib.h>
 
 /**
  * Prints out contents of a queue
@@ -22,6 +23,8 @@ void	printqueue(struct queue *q)
 bool8	isempty(struct queue *q)
 {
 	//TODO
+	//return true;
+	return NULL;
 }
 
 /**
@@ -32,6 +35,7 @@ bool8	isempty(struct queue *q)
 bool8	nonempty(struct queue *q)
 {
 	//TODO - don't just check q's size because q could be NULL
+	return NULL;
 }
 
 
@@ -43,6 +47,7 @@ bool8	nonempty(struct queue *q)
 bool8	isfull(struct queue *q)
 {
 	//TODO - check if there are at least NPROC processes in the queue
+	return NULL;
 }
 
 
@@ -64,6 +69,7 @@ pid32 enqueue(pid32 pid, struct queue *q)
         //TODO - insert into tail of queue
 
         //TODO - return the pid on success
+	return NULL;
 }
 
 
@@ -83,6 +89,7 @@ pid32 dequeue(struct queue *q)
         //TODO - free up the space on the heap
 
         //TODO - return the pid on success
+	return NULL;
 }
 
 
@@ -99,6 +106,7 @@ struct qentry *getbypid(pid32 pid, struct queue *q)
 	//TODO - find the qentry with the given pid
 
 	//TODO - return a pointer to it
+	return NULL;
 }
 
 /**
@@ -111,6 +119,7 @@ pid32	getfirst(struct queue *q)
 	//TODO - return EMPTY if queue is empty
 
 	//TODO - remove process from head of queue and return its pid
+	return NULL;
 }
 
 /**
@@ -123,6 +132,7 @@ pid32	getlast(struct queue *q)
 	//TODO - return EMPTY if queue is empty
 
 	//TODO - remove process from tail of queue and return its pid
+	return NULL;
 }
 
 
@@ -142,4 +152,5 @@ pid32	remove(pid32 pid, struct queue *q)
 	//TODO - remove process identified by pid parameter from the queue and return its pid
 
 	//TODO - if pid does not exist in the queue, return SYSERR
+	return NULL;
 }
