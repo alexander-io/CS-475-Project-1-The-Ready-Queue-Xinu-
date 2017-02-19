@@ -31,7 +31,8 @@ void	printargs(uint32 argc, uint32 *argv)
 }
 
 int	main(uint32 argc, uint32 *argv)
-{
+{	
+	
 	static uint32 main2args[] = {1, 2, 3};
 	static uint32 main3args[] = {10, 20, 30, 40, 50, 60};
 
@@ -41,6 +42,6 @@ int	main(uint32 argc, uint32 *argv)
 	ready(create((void*) printpid, INITSTK, "MAIN3", 2, 0, NULL), FALSE);
 	ready(create((void*) printargs, INITSTK, "MAIN4", 2, 3, main2args), FALSE);
 	ready(create((void*) printargs, INITSTK, "MAIN5", 2, 6, main3args), FALSE);
-
+	
 	return 0;
 }

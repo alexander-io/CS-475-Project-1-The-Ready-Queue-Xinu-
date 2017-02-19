@@ -2,6 +2,7 @@
 
 // #include <xinu.h>
 #include "../include/xinu.h"
+//#include "../include/stdio.h"
 //#include <stdlib.h>
 
 /**
@@ -11,7 +12,8 @@
 void	printqueue(struct queue *q)
 {
 	//TODO - print all contents from head to tail
-
+	//q.size;
+	//printf("%d", q->size);
 	//TODO - format should be [(pid=p1), (pid=p2), ...]
 }
 
@@ -153,4 +155,27 @@ pid32	remove(pid32 pid, struct queue *q)
 
 	//TODO - if pid does not exist in the queue, return SYSERR
 	return NULL;
+}
+
+
+int main(){
+	// init two new qentries
+	struct qentry process1 = {.process_id = 1};
+	struct qentry process2 = {.process_id = 2};
+	
+	
+	process1.next = &process2;
+	process2.prev = &process1;
+
+	struct queue my_queue = {&process1, &process2, 2};
+
+	// call printqueue()
+	printqueue(&my_queue);
+
+
+	//qentry.process_id = 1;
+	
+	//struct queue = {.};
+	
+	return 0;
 }
