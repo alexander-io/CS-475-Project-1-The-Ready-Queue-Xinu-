@@ -11,10 +11,17 @@
  */
 void	printqueue(struct queue *q)
 {
-	//TODO - print all contents from head to tail
-	//q.size;
-	printf("%d\n", q->size);
-	//TODO - format should be [(pid=p1), (pid=p2), ...]
+	// print all contents from head to tail
+	// format should be [(pid=p1), (pid=p2), ...
+
+	struct qentry *toPrint = q->head;
+	printf("\n[(pid=p%d)",toPrint->process_id);
+	toPrint = toPrint->next;
+	while(toPrint != NULL){
+		printf(", (pid=p%d)",toPrint->process_id);
+		toPrint = toPrint->next;
+	}
+	printf("]\n");
 }
 
 /**
@@ -159,6 +166,7 @@ pid32	remove(pid32 pid, struct queue *q)
 
 
 int main(){
+	
 	// init two new qentries
 	struct qentry process1 = {.process_id = 1};
 	struct qentry process2 = {.process_id = 2};
