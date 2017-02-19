@@ -32,6 +32,8 @@ struct qentry
 	// TODO - process ID
 	pid32 process_id;
 	// TODO - other members
+	struct qentry *prev;
+	struct qentry *next;
 	
 };
 
