@@ -80,8 +80,8 @@ bool8	isfull(struct queue *q)
 pid32 enqueue(pid32 pid, struct queue *q)
 {
         // check if queue is full and if pid is illegal, and return SYSERR if either is true
-	//if (isfull(q) || isbadpid(pid)){
-	if (isfull(q)){
+	if (isfull(q) || isbadpid(pid)){
+	//if (isfull(q)){
 		return SYSERR;
 	}
 
@@ -147,8 +147,8 @@ pid32 dequeue(struct queue *q)
 struct qentry *getbypid(pid32 pid, struct queue *q)
 {
 	// return NULL if queue is empty or if an illegal pid is given
-	//if (isempty(q) || isbadpid(pid)){
-	if (isempty(q)){
+	if (isempty(q) || isbadpid(pid)){
+	//if (isempty(q)){
 		return NULL;
 	}
 
@@ -223,10 +223,10 @@ pid32	remove(pid32 pid, struct queue *q)
 	if (isempty(q)){
 		return EMPTY;	
 	}
-	//TODO - return SYSERR if pid is illegal
-	//if(isbadpid(pid)){
-	//	return SYSERR;
-	//}	
+	// return SYSERR if pid is illegal
+	if(isbadpid(pid)){
+		return SYSERR;
+	}	
 	
 	//remove process identified by pid parameter from the queue and return its pid
 	if(q->head->process_id == pid){
