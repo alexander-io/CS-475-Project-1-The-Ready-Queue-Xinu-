@@ -1,8 +1,8 @@
 /* queue.c - enqueue, dequeue, isempty, nonempty, et al. */
 
-// #include <xinu.h>
-#include "../include/xinu.h"
-#include "../include/stdio.h"
+#include <xinu.h>
+//#include "../include/xinu.h"
+//#include "../include/stdio.h"
 #include <stdlib.h>
 
 /**
@@ -14,17 +14,17 @@ void	printqueue(struct queue *q)
 	// print all contents from head to tail
 	// format should be [(pid=p1), (pid=p2), ...
 	if(q->head == NULL){
-		printf("[]\n");
+		kprintf("[]\n");
 		return;
 	}
 	struct qentry *toPrint = q->head;
-	printf("[(pid=p%d)",toPrint->process_id);
+	kprintf("[(pid=p%d)",toPrint->process_id);
 	toPrint = toPrint->next;
 	while(toPrint != NULL){
-		printf(", (pid=p%d)",toPrint->process_id);
+		kprintf(", (pid=p%d)",toPrint->process_id);
 		toPrint = toPrint->next;
 	}
-	printf("]\n");
+	kprintf("]\n");
 }
 
 /**
@@ -252,12 +252,12 @@ pid32	remove(pid32 pid, struct queue *q)
 	return SYSERR;
 }
 
-
+/*
 int main(){
 	struct queue my_queue = {NULL, NULL, 0};
 
 	//enqueue(pid32 pid, struct queue *q)
-	/*
+	
 	printqueue(&my_queue);
 	enqueue(1, &my_queue);
 	printqueue(&my_queue);
@@ -269,7 +269,7 @@ int main(){
 	dequeue(&my_queue);
 	dequeue(&my_queue);
 	printqueue(&my_queue);
-	*/
+	
 	
 
 
@@ -297,14 +297,14 @@ int main(){
 
 	
 	
-	/*dequeue(&my_queue);
+	dequeue(&my_queue);
 	
 	enqueue(2, &my_queue);
 	//enqueue(3, &my_queue);
 	printqueue(&my_queue);
 	dequeue(&my_queue);
 	dequeue(&my_queue);
-	dequeue(&my_queue);*/
+	dequeue(&my_queue);
 
 	
 	//printqueue(&my_queue);
@@ -313,12 +313,12 @@ int main(){
 	// call printqueue()
 	//printqueue(&my_queue);
 	
-	/*dequeue(&my_queue);
-	printqueue(&my_queue);
 	dequeue(&my_queue);
 	printqueue(&my_queue);
 	dequeue(&my_queue);
-	printqueue(&my_queue);*/
+	printqueue(&my_queue);
+	dequeue(&my_queue);
+	printqueue(&my_queue);
 	//dequeue(&my_queue);
 	//dequeue(&my_queue);
 	//printf("\nhead : %d\n", my_queue.head->process_id);
@@ -330,4 +330,4 @@ int main(){
 	
 	return 0;
 }
-
+*/
